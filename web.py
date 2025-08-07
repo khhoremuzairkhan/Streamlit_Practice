@@ -65,6 +65,19 @@ def get_classifier(classifier_name,params):
                 n_estimators=params['n_estimators'],random_state=1234)
     return clf
 
+if st.checkbox('Show code'):
+    with st.echo():
+        clf = get_classifier(classifier_name,params)  
+        X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,random_state=42)
+
+
+        # training the model now
+        clf.fit(X_train,y_train)
+        pred = clf.predict(X_test)
+        accuracy = accuracy_score(y_test,pred)
+        st.write(f'Classifier ={classifier_name}')
+        st.write(f'accuracy = {accuracy}')
+        
 clf = get_classifier(classifier_name,params)  
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,random_state=42)
 

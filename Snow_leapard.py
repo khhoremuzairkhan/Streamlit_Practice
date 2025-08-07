@@ -10,8 +10,8 @@ st.image(image1)
 
 
 # adding video
-video1 = open('leo.mp4','rb')
-st.video(video1)
+#video1 = open('leo.mp4','rb')
+#st.video(video1)
 
 # add audio
 st.write('''**Audio**''')
